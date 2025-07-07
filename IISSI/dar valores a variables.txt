@@ -1,0 +1,1 @@
+SELECT algo INTO variable FROM tabla
