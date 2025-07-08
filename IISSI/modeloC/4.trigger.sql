@@ -19,7 +19,7 @@ BEGIN
 	FROM lineaspedido lp
 	JOIN productos pr ON pr.id=lp.productoId
 	JOIN pedidos p ON p.id=lp.pedidoId
-	WHERE pr.nombre='Físicos' AND p.id=NEW.pedidoId AND MONTH(p.fechaRealizacion) = MONTH(CURDATE()) AND YEAR(p.fechaRealizacion)=YEAR(CURDATE());
+	WHERE pr.nombre='Físicos' AND pr.id=NEW.productoId AND MONTH(p.fechaRealizacion) = MONTH(CURDATE()) AND YEAR(p.fechaRealizacion)=YEAR(CURDATE());
 	
 	SET v_unidades_vendidas_este_mes_prod_fisicos = v_unidades_vendidas_este_mes_prod_fisicos + NEW.unidades; -- sumo la actual
 	
@@ -29,3 +29,9 @@ BEGIN
 
 END //
 DELIMITER ;
+
+
+
+
+
+
